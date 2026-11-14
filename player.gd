@@ -5,6 +5,9 @@ const SPEED = 900.0
 const JUMP_VELOCITY = -900.0
 
 func _physics_process(delta: float) -> void:
+	if position.y >= 920:
+		get_tree().reload_current_scene()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
